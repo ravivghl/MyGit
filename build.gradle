@@ -6,7 +6,8 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.3'
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5' // Add this line
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -21,3 +22,22 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+ext {
+    bintrayRepo = 'Test' // your repo name
+    bintrayName = 'TestLib' // has to be same as your library module name
+    publishedGroupId = 'com.mylibrary' // your module package name
+    libraryName = 'mylibrary'
+    artifact = 'TestLib' // has to be same as your library module name
+    libraryDescription = 'A set of methods used to manipulate time object'
+    siteUrl = 'https://github.com/ravivghl/MyGit'
+    gitUrl = 'git@github.com:ravivghl/MyGit.git'
+    libraryVersion = '1.0'
+    developerId = 'ravivghl'
+    developerName = 'Ravi Vaghela'
+    developerEmail = 'vghlravi@gmail.com'
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
